@@ -1,11 +1,9 @@
-
-
 import 'package:task_app/post_add.dart';
-
 import './http_service.dart';
 import './post_detail.dart';
 import './post_model.dart';
 import 'package:flutter/material.dart';
+
 class PostsPage extends StatefulWidget {
   @override
   _PostsPageState createState() => _PostsPageState();

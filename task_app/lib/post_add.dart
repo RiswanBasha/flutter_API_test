@@ -6,7 +6,7 @@ import 'package:task_app/post.dart';
 
 Future<Album> createAlbum(String title, String value) async {
   final http.Response response = await http.post(
-    'https://jsonplaceholder.typicode.com/posts',
+    'https://jsonplaceholder.typicode.com/albums',
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -152,8 +152,6 @@ class _MyAppState extends State<MyApp> {
                             ],
                       )
                       );
-                    }else if (snapshot.hasData){
-                          return Text(snapshot.data.value);
                     }
                      else if (snapshot.hasError) {
                       return Text("${snapshot.error}");
