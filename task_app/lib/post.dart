@@ -23,7 +23,7 @@ class _PostsPageState extends State<PostsPage> {
           IconButton(
             icon: Icon(Icons.add_comment),
             onPressed: () async {
-              Navigator.push(context,MaterialPageRoute(builder: (context) => MyApp1()));
+              Navigator.push(context,MaterialPageRoute(builder: (context) => MyApp()));
             },
           )
         ],

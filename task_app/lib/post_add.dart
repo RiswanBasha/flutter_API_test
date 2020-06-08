@@ -18,7 +18,8 @@ Future<Album> createAlbum(String title, String value) async {
 
   if (response.statusCode == 201) {
     return Album.fromJson(json.decode(response.body));
-  } else {
+  }
+   else {
     throw Exception('Failed to create album.');
   }
 }
@@ -40,11 +41,11 @@ class Album {
 }
 
 void main() {
-  runApp(MyApp1());
+  runApp(MyApp());
 }
 
-class MyApp1 extends StatefulWidget {
-  MyApp1({Key key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
 
   @override
   _MyAppState createState() {
@@ -52,7 +53,7 @@ class MyApp1 extends StatefulWidget {
   }
 }
 
-class _MyAppState extends State<MyApp1> {
+class _MyAppState extends State<MyApp> {
   final TextEditingController _controller = TextEditingController();
   final TextEditingController _bodycontroller = TextEditingController();
   Future<Album> _futureAlbum;
@@ -151,7 +152,10 @@ class _MyAppState extends State<MyApp1> {
                             ],
                       )
                       );
-                    } else if (snapshot.hasError) {
+                    }else if (snapshot.hasData){
+                          return Text(snapshot.data.value);
+                    }
+                     else if (snapshot.hasError) {
                       return Text("${snapshot.error}");
                     }
                     return CircularProgressIndicator();
